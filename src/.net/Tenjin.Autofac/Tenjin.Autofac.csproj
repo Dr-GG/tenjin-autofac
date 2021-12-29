@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <PackageId>Tenjin.Autofac</PackageId>
+    <Authors>Gerard Gouws</Authors>
+    <Company>Tenjin Libraries</Company>
+    <Description>Small Autofac extensions for the Tenjin core library.</Description>
+    <PackageIcon>tenjin-autofac.png</PackageIcon>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/Dr-GG/tenjin-autofac</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Dr-GG/tenjin-autofac</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryBranch>master</RepositoryBranch>
+    <PackageTags>Autofac extension methods for the Tenjin core library.</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.3.0" />
+    <PackageReference Include="Tenjin" Version="1.0.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="tenjin-autofac.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+
+</Project>
