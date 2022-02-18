@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <PackageId>Tenjin.Autofac</PackageId>
     <Authors>Gerard Gouws</Authors>
@@ -27,11 +27,11 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.3.0" />
-    <PackageReference Include="Tenjin" Version="1.0.14" />
+    <PackageReference Include="Tenjin" Version="1.1.28" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="tenjin-autofac.png" Pack="true" PackagePath="\"/>
+    <None Include="tenjin-autofac.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project>
