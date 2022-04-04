@@ -6,7 +6,7 @@ using Tenjin.Interfaces.Mappers;
 
 namespace Tenjin.Autofac.Extensions
 {
-    public static class AutofacContainerExtensions
+    public static class AutofacContainerMapperExtensions
     {
         public static void RegisterUnaryMappers(this ContainerBuilder container, Assembly assembly)
         {
