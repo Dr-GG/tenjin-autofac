@@ -7,7 +7,7 @@ using Tenjin.Interfaces.Mappers;
 namespace Tenjin.Autofac.Tests.ExtensionsTests
 {
     [TestFixture]
-    public class AutofacContainerExtensionsTests
+    public class AutofacContainerMapperExtensionsTests
     {
         [Test]
         public void RegisterMappers_WhenGivenAnAssembly_RegistersAllMappers()
@@ -58,7 +58,7 @@ namespace Tenjin.Autofac.Tests.ExtensionsTests
 
         private static LeftModel GetLeftInputModel()
         {
-            return new()
+            return new LeftModel
             {
                 Property1 = 1,
                 Property2 = "left"
@@ -67,7 +67,7 @@ namespace Tenjin.Autofac.Tests.ExtensionsTests
 
         private static RightModel GetRightInputModel()
         {
-            return new()
+            return new RightModel
             {
                 Property1 = 2,
                 Property2 = "right"
@@ -88,7 +88,7 @@ namespace Tenjin.Autofac.Tests.ExtensionsTests
 
         private static IContainer GetDefaultContainer()
         {
-            var assembly = typeof(AutofacContainerExtensionsTests).Assembly;
+            var assembly = typeof(AutofacContainerMapperExtensionsTests).Assembly;
             var container = new ContainerBuilder();
 
             /*
