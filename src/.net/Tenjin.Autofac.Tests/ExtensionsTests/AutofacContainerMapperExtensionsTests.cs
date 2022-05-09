@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using NUnit.Framework;
 using Tenjin.Autofac.Extensions;
-using Tenjin.Autofac.Tests.Models;
+using Tenjin.Autofac.Tests.Models.Mappers;
 using Tenjin.Interfaces.Mappers;
 
 namespace Tenjin.Autofac.Tests.ExtensionsTests

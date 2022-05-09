@@ -1,4 +1,4 @@
-﻿namespace Tenjin.Autofac.Tests.Models
+﻿namespace Tenjin.Autofac.Tests.Models.Settings
 {
     public record TestSettings
     {
