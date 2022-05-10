@@ -1,6 +1,6 @@
 ﻿using Tenjin.Autofac.Tests.Constants;
-using Tenjin.Implementations.Messaging;
-using Tenjin.Interfaces.Messaging;
+using Tenjin.Implementations.Messaging.PublisherSubscriber;
+using Tenjin.Interfaces.Messaging.PublishSubscriber;
 
 namespace Tenjin.Autofac.Tests.Implementations.Messaging
 {

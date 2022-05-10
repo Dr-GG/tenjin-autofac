@@ -2,7 +2,7 @@
 using Tenjin.Autofac.Extensions;
 using Tenjin.Autofac.Tests.Enums;
 using Tenjin.Autofac.Tests.Implementations.Messaging;
-using Tenjin.Interfaces.Messaging;
+using Tenjin.Interfaces.Messaging.PublishSubscriber;
 
 namespace Tenjin.Autofac.Tests.Utilities
 {

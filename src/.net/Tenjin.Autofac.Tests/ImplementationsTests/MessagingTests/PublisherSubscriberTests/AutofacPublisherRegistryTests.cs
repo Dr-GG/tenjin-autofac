@@ -5,9 +5,9 @@ using Tenjin.Autofac.Tests.Constants;
 using Tenjin.Autofac.Tests.Enums;
 using Tenjin.Autofac.Tests.Models.Messaging;
 using Tenjin.Autofac.Tests.Utilities;
-using Tenjin.Interfaces.Messaging;
+using Tenjin.Interfaces.Messaging.PublishSubscriber;
 
-namespace Tenjin.Autofac.Tests.ImplementationsTests.MessagingTests
+namespace Tenjin.Autofac.Tests.ImplementationsTests.MessagingTests.PublisherSubscriberTests
 {
     [TestFixture]
     public class AutofacPublisherRegistryTests
