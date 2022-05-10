@@ -1,6 +1,6 @@
 ﻿using Autofac;
-using Tenjin.Autofac.Implementations.Messaging;
-using Tenjin.Interfaces.Messaging;
+using Tenjin.Autofac.Implementations.Messaging.PublisherSubscriber;
+using Tenjin.Interfaces.Messaging.PublishSubscriber;
 
 namespace Tenjin.Autofac.Extensions
 {
