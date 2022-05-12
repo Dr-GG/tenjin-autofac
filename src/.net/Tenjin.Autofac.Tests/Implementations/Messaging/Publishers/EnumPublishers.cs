@@ -1,8 +1,8 @@
 ﻿using Tenjin.Autofac.Tests.Enums;
-using Tenjin.Implementations.Messaging.PublisherSubscriber;
-using Tenjin.Interfaces.Messaging.PublishSubscriber;
+using Tenjin.Implementations.Messaging.Publishers;
+using Tenjin.Interfaces.Messaging.Publishers;
 
-namespace Tenjin.Autofac.Tests.Implementations.Messaging
+namespace Tenjin.Autofac.Tests.Implementations.Messaging.Publishers
 {
     public class EnumPublisherDecimal : Publisher<object>, IDiscoverablePublisher<TestPublisherType, object>
     {

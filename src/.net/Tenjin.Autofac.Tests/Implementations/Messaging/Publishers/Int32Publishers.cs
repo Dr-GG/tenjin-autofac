@@ -1,8 +1,8 @@
 ﻿using Tenjin.Autofac.Tests.Constants;
-using Tenjin.Implementations.Messaging.PublisherSubscriber;
-using Tenjin.Interfaces.Messaging.PublishSubscriber;
+using Tenjin.Implementations.Messaging.Publishers;
+using Tenjin.Interfaces.Messaging.Publishers;
 
-namespace Tenjin.Autofac.Tests.Implementations.Messaging
+namespace Tenjin.Autofac.Tests.Implementations.Messaging.Publishers
 {
     public class Int32Publisher1 : Publisher<object>, IDiscoverablePublisher<int, object>
     {
