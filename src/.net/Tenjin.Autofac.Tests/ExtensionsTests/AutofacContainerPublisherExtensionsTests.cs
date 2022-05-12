@@ -4,7 +4,7 @@ using NUnit.Framework;
 using Tenjin.Autofac.Extensions;
 using Tenjin.Autofac.Tests.Constants;
 using Tenjin.Autofac.Tests.Utilities;
-using Tenjin.Interfaces.Messaging.PublishSubscriber;
+using Tenjin.Interfaces.Messaging.Publishers;
 
 namespace Tenjin.Autofac.Tests.ExtensionsTests
 {

@@ -1,8 +1,8 @@
 ﻿using Autofac;
 using Tenjin.Autofac.Extensions;
 using Tenjin.Autofac.Tests.Enums;
-using Tenjin.Autofac.Tests.Implementations.Messaging;
-using Tenjin.Interfaces.Messaging.PublishSubscriber;
+using Tenjin.Autofac.Tests.Implementations.Messaging.Publishers;
+using Tenjin.Interfaces.Messaging.Publishers;
 
 namespace Tenjin.Autofac.Tests.Utilities
 {
