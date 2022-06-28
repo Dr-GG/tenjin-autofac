@@ -1,8 +1,7 @@
-﻿namespace Tenjin.Autofac.Tests.Models.Mappers
+﻿namespace Tenjin.Autofac.Tests.Models.Mappers;
+
+public record RightModel
 {
-    public record RightModel
-    {
-        public int Property1 { get; init; }
-        public string Property2 { get; init; } = string.Empty;
-    }
+    public int Property1 { get; init; }
+    public string Property2 { get; init; } = string.Empty;
 }
