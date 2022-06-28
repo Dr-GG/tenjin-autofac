@@ -1,12 +1,11 @@
-﻿namespace Tenjin.Autofac.Tests.Enums
+﻿namespace Tenjin.Autofac.Tests.Enums;
+
+public enum TestPublisherType
 {
-    public enum TestPublisherType
-    {
-        Int16,
-        Int32,
-        Int64,
-        Double,
-        Single,
-        Decimal,
-    }
+    Int16,
+    Int32,
+    Int64,
+    Double,
+    Single,
+    Decimal
 }

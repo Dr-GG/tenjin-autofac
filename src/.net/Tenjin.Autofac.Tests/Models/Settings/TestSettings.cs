@@ -1,8 +1,7 @@
-﻿namespace Tenjin.Autofac.Tests.Models.Settings
+﻿namespace Tenjin.Autofac.Tests.Models.Settings;
+
+public record TestSettings
 {
-    public record TestSettings
-    {
-        public int Property1 { get; init; }
-        public string Property2 { get; init; } = string.Empty;
-    }
+    public int Property1 { get; init; }
+    public string Property2 { get; init; } = string.Empty;
 }

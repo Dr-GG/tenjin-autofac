@@ -25,8 +25,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac" Version="6.3.0" />
-    <PackageReference Include="Tenjin" Version="1.8.0.78" />
+    <PackageReference Include="Autofac" Version="6.4.0" />
+    <PackageReference Include="Tenjin" Version="1.10.5.88" />
   </ItemGroup>
 	
   <ItemGroup>
