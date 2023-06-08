@@ -4,8 +4,14 @@ using Tenjin.Interfaces.Diagnostics;
 
 namespace Tenjin.Autofac.Extensions;
 
-public static class AutofacContainerDiagnosticWatchExtensions
+/// <summary>
+/// A collection of extension methods for registering the DiagnosticsLapStopwatch instance.
+/// </summary>
+public static class AutofacContainerDiagnosticsLapStopwatchExtensions
 {
+    /// <summary>
+    /// Registers the ISystemClockProvider.
+    /// </summary>
     public static void RegisterSystemClockProvider(this ContainerBuilder builder, bool useUct = true)
     {
         builder
@@ -14,13 +20,16 @@ public static class AutofacContainerDiagnosticWatchExtensions
             .SingleInstance();
     }
 
+    /// <summary>
+    /// Registers teh DiagnosticsLapStopwatch.
+    /// </summary>
     public static void RegisterDiagnosticsWatch(this ContainerBuilder builder, bool useUct = true)
     {
         builder.RegisterSystemClockProvider(useUct);
 
         builder
-            .RegisterType<DiagnosticsStopwatch>()
-            .As<IDiagnosticsStopwatch>()
+            .RegisterType<DiagnosticsLapStopwatch>()
+            .As<DiagnosticsLapStopwatch>()
             .InstancePerLifetimeScope();
     }
 }

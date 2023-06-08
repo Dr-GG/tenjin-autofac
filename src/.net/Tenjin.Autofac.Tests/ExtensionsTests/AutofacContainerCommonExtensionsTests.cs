@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using FluentAssertions;
 using NUnit.Framework;
 using Tenjin.Autofac.Extensions;
 using Tenjin.Autofac.Tests.Models.Settings;
@@ -23,10 +24,10 @@ public class AutofacContainerCommonExtensionsTests
         var container = containerBuilder.Build();
         var resolvedSettings = container.Resolve<TestSettings>();
 
-        Assert.IsTrue(resolvedSettings.Equals(originalSettings));
-        Assert.AreEqual(123, originalSettings.Property1);
-        Assert.AreEqual("test this", originalSettings.Property2);
-        Assert.AreEqual(123, resolvedSettings.Property1);
-        Assert.AreEqual("test this", resolvedSettings.Property2);
+        resolvedSettings.Should().Be(originalSettings);
+        originalSettings.Property1.Should().Be(123);
+        originalSettings.Property2.Should().Be("test this");
+        resolvedSettings.Property1.Should().Be(123);
+        resolvedSettings.Property2.Should().Be("test this");
     }
 }

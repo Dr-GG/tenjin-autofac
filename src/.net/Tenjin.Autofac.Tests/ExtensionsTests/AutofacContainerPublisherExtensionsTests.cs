@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Autofac;
+using FluentAssertions;
 using NUnit.Framework;
 using Tenjin.Autofac.Extensions;
 using Tenjin.Autofac.Tests.Constants;
@@ -8,7 +9,7 @@ using Tenjin.Interfaces.Messaging.Publishers;
 
 namespace Tenjin.Autofac.Tests.ExtensionsTests;
 
-[TestFixture]
+[TestFixture, Parallelizable(ParallelScope.Children)]
 public class AutofacContainerPublisherExtensionsTests
 {
     [Test]
@@ -45,7 +46,7 @@ public class AutofacContainerPublisherExtensionsTests
         {
             var publisher = registry[id];
 
-            Assert.IsNotNull(publisher);
+            publisher.Should().NotBeNull();
         }
     }
 }

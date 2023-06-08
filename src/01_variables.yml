@@ -1,0 +1,7 @@
+variables:
+  version: '1.4.0'
+  dotNetCoreVersion: "6.x"
+  buildConfiguration: 'Release'
+  ngBuildConfiguration: '--prod'
+  solutionPath: 'src/.net/Tenjin.Autofac.sln'
+  nugetProjectPath: 'src/.net/Tenjin.Autofac/Tenjin.Autofac.csproj'

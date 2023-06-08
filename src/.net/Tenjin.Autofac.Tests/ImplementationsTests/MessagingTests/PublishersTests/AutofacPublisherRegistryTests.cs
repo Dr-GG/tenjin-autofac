@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Autofac;
+using FluentAssertions;
 using NUnit.Framework;
 using Tenjin.Autofac.Tests.Constants;
 using Tenjin.Autofac.Tests.Enums;
@@ -9,7 +10,7 @@ using Tenjin.Interfaces.Messaging.Publishers;
 
 namespace Tenjin.Autofac.Tests.ImplementationsTests.MessagingTests.PublishersTests;
 
-[TestFixture]
+[TestFixture, Parallelizable(ParallelScope.Children)]
 public class AutofacPublisherRegistryTests
 {
     private static readonly TestPublisherRegistryData<string> StringDiscoverablePublishersData = new()
@@ -164,9 +165,9 @@ public class AutofacPublisherRegistryTests
         {
             var gotPublisher = registry.TryGet(id, out var publisher);
 
-            Assert.IsTrue(gotPublisher);
-            Assert.IsNotNull(publisher);
-            Assert.AreEqual(id, ((IDiscoverablePublisher<TKey, object>)publisher!).Id);
+            gotPublisher.Should().BeTrue();
+            publisher.Should().NotBeNull();
+            id.Should().Be(((IDiscoverablePublisher<TKey, object>)publisher!).Id);
         }
     }
 
@@ -179,8 +180,8 @@ public class AutofacPublisherRegistryTests
         {
             var gotPublisher = registry.TryGet(id, out var publisher);
 
-            Assert.IsFalse(gotPublisher);
-            Assert.IsNull(publisher);
+            gotPublisher.Should().BeFalse();
+            publisher.Should().BeNull();
         }
     }
 
@@ -193,8 +194,8 @@ public class AutofacPublisherRegistryTests
         {
             var publisher = registry.Get(id);
 
-            Assert.IsNotNull(publisher);
-            Assert.AreEqual(id, ((IDiscoverablePublisher<TKey, object>)publisher).Id);
+            publisher.Should().NotBeNull();
+            id.Should().Be(((IDiscoverablePublisher<TKey, object>)publisher).Id);
         }
     }
 
@@ -218,8 +219,8 @@ public class AutofacPublisherRegistryTests
         {
             var publisher = registry[id];
 
-            Assert.IsNotNull(publisher);
-            Assert.AreEqual(id, ((IDiscoverablePublisher<TKey, object>)publisher).Id);
+            publisher.Should().NotBeNull();
+            id.Should().Be(((IDiscoverablePublisher<TKey, object>)publisher).Id);
         }
     }
 
