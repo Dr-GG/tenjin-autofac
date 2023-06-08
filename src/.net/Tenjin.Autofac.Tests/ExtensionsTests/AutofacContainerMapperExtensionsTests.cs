@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using FluentAssertions;
 using NUnit.Framework;
 using Tenjin.Autofac.Extensions;
 using Tenjin.Autofac.Tests.Models.Mappers;
@@ -6,7 +7,7 @@ using Tenjin.Interfaces.Mappers;
 
 namespace Tenjin.Autofac.Tests.ExtensionsTests;
 
-[TestFixture]
+[TestFixture, Parallelizable(ParallelScope.Children)]
 public class AutofacContainerMapperExtensionsTests
 {
     [Test]
@@ -19,15 +20,15 @@ public class AutofacContainerMapperExtensionsTests
         var binaryMapper1 = scope.Resolve<IBinaryMapper<LeftModel, RightModel>>();
         var binaryMapper2 = scope.Resolve<IBinaryMapper<RightModel, LeftModel>>();
 
-        Assert.IsNotNull(leftToRightMapper);
-        Assert.IsNotNull(rightToLeftMapper);
-        Assert.IsNotNull(binaryMapper1);
-        Assert.IsNotNull(binaryMapper2);
+        leftToRightMapper.Should().NotBeNull();
+        rightToLeftMapper.Should().NotBeNull();
+        binaryMapper1.Should().NotBeNull();
+        binaryMapper2.Should().NotBeNull();
 
-        Assert.IsInstanceOf<IUnaryMapper<LeftModel, RightModel>>(leftToRightMapper);
-        Assert.IsInstanceOf<IUnaryMapper<RightModel, LeftModel>>(rightToLeftMapper);
-        Assert.IsInstanceOf<IBinaryMapper<LeftModel, RightModel>>(binaryMapper1);
-        Assert.IsInstanceOf<IBinaryMapper<RightModel, LeftModel>>(binaryMapper2);
+        leftToRightMapper.Should().BeAssignableTo<IUnaryMapper<LeftModel, RightModel>>();
+        rightToLeftMapper.Should().BeAssignableTo<IUnaryMapper<RightModel, LeftModel>>();
+        binaryMapper1.Should().BeAssignableTo<IBinaryMapper<LeftModel, RightModel>>();
+        binaryMapper2.Should().BeAssignableTo<IBinaryMapper<RightModel, LeftModel>>();
     }
 
     [Test]
@@ -76,14 +77,14 @@ public class AutofacContainerMapperExtensionsTests
 
     private static void AssertOutput(LeftModel model)
     {
-        Assert.AreEqual(model.Property1, 2);
-        Assert.AreEqual(model.Property2, "right");
+        model.Property1.Should().Be(2);
+        model.Property2.Should().Be("right");
     }
 
     private static void AssertOutput(RightModel model)
     {
-        Assert.AreEqual(model.Property1, 1);
-        Assert.AreEqual(model.Property2, "left");
+        model.Property1.Should().Be(1);
+        model.Property2.Should().Be("left");
     }
 
     private static IContainer GetDefaultContainer()

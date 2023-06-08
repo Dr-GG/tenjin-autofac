@@ -1,5 +1,6 @@
 ﻿using System;
 using Autofac;
+using FluentAssertions;
 using NUnit.Framework;
 using Tenjin.Autofac.Extensions;
 using Tenjin.Implementations.Diagnostics;
@@ -7,7 +8,7 @@ using Tenjin.Interfaces.Diagnostics;
 
 namespace Tenjin.Autofac.Tests.ExtensionsTests;
 
-[TestFixture]
+[TestFixture, Parallelizable(ParallelScope.Children)]
 public class AutofacContainerDiagnosticWatchExtensionsTests
 {
     [Test]
@@ -20,9 +21,9 @@ public class AutofacContainerDiagnosticWatchExtensionsTests
         using var container = containerBuilder.Build();
         var clockProvider = container.Resolve<ISystemClockProvider>();
 
-        Assert.IsNotNull(clockProvider);
-        Assert.IsInstanceOf<ISystemClockProvider>(clockProvider);
-        Assert.IsInstanceOf<SystemClockProvider>(clockProvider);
+        clockProvider.Should().NotBeNull();
+        clockProvider.Should().BeAssignableTo<ISystemClockProvider>();
+        clockProvider.Should().BeOfType<SystemClockProvider>();
     }
 
     [TestCase(true)]
@@ -39,6 +40,6 @@ public class AutofacContainerDiagnosticWatchExtensionsTests
         var providedNow = clockProvider.Now();
         var differenceSeconds = (providedNow - now).TotalMilliseconds;
 
-        Assert.LessOrEqual(differenceSeconds, 1.0);
+        differenceSeconds.Should().BeLessOrEqualTo(1.0);
     }
 }

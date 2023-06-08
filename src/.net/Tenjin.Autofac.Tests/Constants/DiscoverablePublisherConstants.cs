@@ -13,7 +13,7 @@ public static class DiscoverablePublisherConstants
         public const string D = "D";
         public const string E = "E";
 
-        public static IEnumerable<string> Ids = new[]
+        public static readonly IEnumerable<string> Ids = new[]
         {
             A, B, C, D, E
         };
@@ -27,7 +27,7 @@ public static class DiscoverablePublisherConstants
         public const int _4 = 4;
         public const int _5 = 5;
 
-        public static IEnumerable<int> Ids = new[]
+        public static readonly IEnumerable<int> Ids = new[]
         {
             _1, _2, _3, _4, _5
         };
@@ -41,7 +41,7 @@ public static class DiscoverablePublisherConstants
         public const int _4 = 4;
         public const int _5 = 5;
 
-        public static IEnumerable<TestPublisherType> Ids = new[]
+        public static readonly IEnumerable<TestPublisherType> Ids = new[]
         {
             TestPublisherType.Decimal,
             TestPublisherType.Double,
